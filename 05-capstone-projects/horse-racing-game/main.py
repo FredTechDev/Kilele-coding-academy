@@ -2,6 +2,7 @@
 import random
 import time
 import os
+import sys
 
 
 # ==========================================
@@ -25,12 +26,13 @@ HORSES = {
 
 def clear_screen():
 
-    os.system("cls" if os.name == "nt" else "clear")
+    if "--demo" not in sys.argv:
+        os.system("cls" if os.name == "nt" else "clear")
 
 
 def pause(seconds=1):
 
-    time.sleep(seconds)
+    time.sleep(0.05 if "--demo" in sys.argv else seconds)
 
 
 # ==========================================
@@ -38,6 +40,11 @@ def pause(seconds=1):
 # ==========================================
 
 def get_number(prompt, minimum, maximum):
+
+    if "--demo" in sys.argv:
+        val = 14 if (minimum <= 14 <= maximum) else minimum
+        print(f"{prompt}[Auto-demo]: {val}")
+        return val
 
     while True:
 
@@ -63,6 +70,7 @@ def get_number(prompt, minimum, maximum):
             print("Invalid input. Enter a whole number.")
 
 
+
 # ==========================================
 # 4. WELCOME AND AGE VERIFICATION
 # ==========================================
@@ -75,7 +83,7 @@ def welcome():
     print("          HORSE RACING CHALLENGE")
     print("=" * 45)
 
-    name = input("Enter your name: ").strip()
+    name = "Demo Player" if "--demo" in sys.argv else input("Enter your name: ").strip()
 
     if name == "":
 
@@ -413,7 +421,7 @@ def main():
 
         else:
 
-            replay = input(
+            replay = "no" if "--demo" in sys.argv else input(
                 "\nWould you like another race? (yes/no): "
             )
 
