@@ -2,7 +2,8 @@
 =============================================================================
 Kilele Python Learning Pack — Core Concepts
 File: introduction-to-classes.py
-Description: Introduction to Object-Oriented Programming (Classes & Objects)
+Description: Introduction to Object-Oriented Programming (OOP), Dunder Methods,
+             and Inheritance
 =============================================================================
 
 Learning Objectives:
@@ -10,7 +11,8 @@ Learning Objectives:
 2. Grasp the Blueprint Analogy: Class (blueprint) vs Object (actual instance).
 3. Define classes using the class keyword and PascalCase naming.
 4. Master the __init__() initializer and the self parameter.
-5. Define instance attributes and behavior methods.
+5. Implement the __str__() dunder method for clean object printing.
+6. Understand Inheritance: Subclassing and super().__init__().
 """
 
 import random
@@ -33,22 +35,21 @@ print("==================================================")
 
 
 # ==========================================
-# 2. DEFINING A CLASS AND THE __init__ METHOD
+# 2. DEFINING A CLASS AND __init__
 # ==========================================
 class RaceHorse:
-    """Represents a competitive horse on the race track."""
+    """Base class representing a competitive horse on the race track."""
 
     def __init__(self, name, jockey, jersey_color):
         """
         The constructor / initializer. Runs automatically when a new horse is created!
-        'self' refers to the specific individual horse instance being born.
+        'self' refers to the specific individual horse instance being initialized.
         """
         # Attributes (State):
         self.name = name
         self.jockey = jockey
         self.jersey_color = jersey_color
         self.track_position = 0
-        self.is_finished = False
 
     # Methods (Behavior):
     def gallop(self):
@@ -62,43 +63,59 @@ class RaceHorse:
         track = "-" * self.track_position + "🏇" + " " * max(0, finish_line - self.track_position) + "|🏁"
         return f"{self.name:<10} [{self.jersey_color:<6}]: {track} (Pos: {self.track_position})"
 
+    # DUNDER METHOD: __str__() controls how this object appears when printed:
+    def __str__(self):
+        return f"RaceHorse('{self.name}', Jockey: {self.jockey}, Color: {self.jersey_color})"
+
 
 # ==========================================
-# 3. CREATING OBJECTS (INSTANTIATION)
+# 3. INHERITANCE: SUBCLASSING & super()
 # ==========================================
-print("\n--- 3. Instantiating Objects from a Class ---")
+# A subclass inherits all attributes and methods of its parent class,
+# but can add specialized behaviors or override existing ones:
 
-# Creating three distinct objects from the RaceHorse class blueprint:
+class ChampionHorse(RaceHorse):
+    """A specialized Thoroughbred horse that possesses a nitro boost ability."""
+
+    def __init__(self, name, jockey, jersey_color, championship_trophies):
+        # Call the parent class __init__ using super():
+        super().__init__(name, jockey, jersey_color)
+        self.championship_trophies = championship_trophies
+
+    def turbo_sprint(self):
+        """A specialized method only available to Champion horses!"""
+        boost = random.randint(5, 8)
+        self.track_position += boost
+        print(f"  ⚡ TURBO SPRINT: {self.name} unleashes a {boost}m burst!")
+        return boost
+
+    def __str__(self):
+        return f"ChampionHorse('{self.name}', Trophies: {self.championship_trophies})"
+
+
+# ==========================================
+# 4. INSTANTIATING OBJECTS AND TESTING
+# ==========================================
+print("\n--- 4. Instantiating Objects and __str__ ---")
+
 horse1 = RaceHorse(name="Thunder", jockey="Mwangi", jersey_color="Blue")
 horse2 = RaceHorse(name="Lightning", jockey="Amina", jersey_color="Gold")
-horse3 = RaceHorse(name="Shadow", jockey="Kofi", jersey_color="Black")
+champ = ChampionHorse(name="Shadow", jockey="Kofi", jersey_color="Black", championship_trophies=3)
 
-print(f"Created horse: {horse1.name} ridden by {horse1.jockey}")
-print(f"Created horse: {horse2.name} ridden by {horse2.jockey}")
-print(f"Created horse: {horse3.name} ridden by {horse3.jockey}")
+# Notice how clean print() looks thanks to __str__():
+print("Horse 1:", horse1)
+print("Horse 2:", horse2)
+print("Champion:", champ)
 
 
 # ==========================================
-# 4. INVOKING METHODS (BEHAVIOR IN ACTION)
+# 5. RUNNING SIMULATION WITH INHERITED METHODS
 # ==========================================
-print("\n--- 4. Running Simulation with Object Methods ---")
+print("\n--- 5. Sprint Simulation ---")
+horse1.gallop()
+horse2.gallop()
+champ.turbo_sprint()  # Champion uses its unique subclass method!
 
-# Turn 1:
-print("--- Turn 1 Sprint ---")
-for h in [horse1, horse2, horse3]:
-    step = h.gallop()
-    print(f"  {h.name} galloped forward {step} meters!")
-
-# Display current track positions:
-print("\nTrack Status:")
-for h in [horse1, horse2, horse3]:
+print("\nCurrent Track Status:")
+for h in [horse1, horse2, champ]:
     print(h.get_progress_display(finish_line=20))
-
-
-# ==========================================
-# 5. SUMMARY OF KEY OOP TERMS
-# ==========================================
-# - Class: A blueprint defining attributes and methods (e.g. RaceHorse).
-# - Object / Instance: A concrete entity built from a class (e.g. horse1).
-# - Attribute: A variable that belongs to an object (e.g. self.name).
-# - Method: A function that belongs to an object and can access 'self' (e.g. gallop()).

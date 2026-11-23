@@ -137,9 +137,10 @@ The Kilele Python curriculum bridges the gap between abstract computer science c
   - Lists (`list`): zero-indexed ordered sequences, indexing, `.append()`, `.pop()`, `.insert()`, `.remove()`.
   - Tuples (`tuple`): immutable sequences and unpacking.
   - Dictionaries (`dict`): key-value pairs, accessing keys, `.get()`, updating values, iterating items.
-  - Searching, filtering, and transforming elements in a list.
+  - Sets (`set`): unique elements, duplicate elimination, union (`|`), intersection (`&`), difference (`-`).
+  - Searching, filtering, and transforming elements in a collection.
 - **Learning Outcome:** Store, retrieve, update, and iterate over collections of data effectively.
-- **Folder Reference:** `02-core-concepts/strings.py`, `lists.py`, `tuples.py`, `dictionaries.py`
+- **Folder Reference:** `02-core-concepts/strings.py`, `lists.py`, `tuples.py`, `dictionaries.py`, `sets.py`
 
 ---
 

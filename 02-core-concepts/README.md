@@ -21,12 +21,14 @@ Work through these concepts in order. Each topic directly builds upon the founda
 | 9 | `functions.py` | Modular Functions | `def`, parameters, return values, variable scope, and pure functions |
 | 10 | `strings.py` | String Methods | Slicing `[start:stop]`, formatting, and built-in methods (`.replace()`, `.split()`) |
 | 11 | `lists.py` | Lists (Dynamic Arrays) | Ordered items, indexing, `.append()`, `.pop()`, slicing, searching |
-| 12 | `tuples.py` | Tuples (Immutable Data) | Ordered fixed collections, unpacking, and data safety |
-| 13 | `dictionaries.py` | Dictionaries (Key-Value) | Mapping keys to values, lookups, `.get()`, updating, and iterating |
-| 14 | `random-module.py` | Randomness & Simulation | `import random`, `randint()`, `choice()`, `shuffle()`, seed basics |
-| 15 | `error-handling.py` | Defensive Coding | `try` / `except` blocks, catching errors, resilient input loops |
-| 16 | `file-handling.py` | Data Persistence | Reading and writing files using `with open(...)` |
-| 17 | `introduction-to-classes.py` | Object-Oriented Intro | Defining classes, `__init__()`, `self`, attributes, and methods |
+| 12 | `list-comprehensions.py` | List Comprehensions | Concise mapping & filtering `[expr for item in list if cond]` |
+| 13 | `tuples.py` | Tuples (Immutable Data) | Ordered fixed collections, unpacking, and data safety |
+| 14 | `dictionaries.py` | Dictionaries (Key-Value) | Mapping keys to values, lookups, `.get()`, updating, and iterating |
+| 15 | `sets.py` | Sets (Unique Data) | Deduplication, Venn diagram operations (union, intersection, difference) |
+| 16 | `random-module.py` | Randomness & Simulation | `import random`, `randint()`, `choice()`, `shuffle()`, seed basics |
+| 17 | `error-handling.py` | Defensive Coding | `try` / `except` blocks, catching errors, resilient input loops |
+| 18 | `file-handling.py` | Data Persistence | Reading and writing files using `with open(...)` |
+| 19 | `introduction-to-classes.py` | Object-Oriented Intro | Classes, `__init__()`, `self`, methods, `__str__`, and inheritance |
 
 ---
 

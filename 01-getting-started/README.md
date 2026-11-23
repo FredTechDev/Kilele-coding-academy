@@ -22,6 +22,7 @@ By the end of this module, you will:
 | `first-python-program.py` | Python Script | The traditional "Hello, World!" and introductory print statements. |
 | `print-and-comments.py` | Python Script | Working examples showing strings, numbers, separation, and commentary. |
 | `first-practical.md` | Lesson / Lab | Guided instructions, line-by-line breakdown, and quick exercises. |
+| `debugging-guide.md` | Student Guide | Anatomy of tracebacks, top 7 error fixes, and VS Code debugger. |
 
 ---
 

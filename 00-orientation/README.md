@@ -23,6 +23,7 @@ By the end of this orientation, you will:
 | `how-programs-work.md` | Understanding CPU execution, source code, interpreters, and memory. |
 | `setting-up-python.md` | Step-by-step setup guide for Linux, macOS, and Windows. |
 | `using-vscode.md` | Navigating VS Code, the editor pane, terminal, and running scripts. |
+| `python-quick-reference.md` | Complete one-stop syntax cheat sheet and collections summary. |
 
 ---
 
