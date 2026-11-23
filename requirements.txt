@@ -1,0 +1,8 @@
+# Kilele Python Learning Pack Requirements
+# Core curriculum relies exclusively on Python 3 standard library.
+# Recommended Python version: Python 3.8+ (tested on Python 3.10+)
+
+# Optional instructor/developer tooling for code formatting and quality checks:
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
