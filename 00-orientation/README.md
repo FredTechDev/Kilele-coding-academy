@@ -24,6 +24,9 @@ By the end of this orientation, you will:
 | `setting-up-python.md` | Step-by-step setup guide for Linux, macOS, and Windows. |
 | `using-vscode.md` | Navigating VS Code, the editor pane, terminal, and running scripts. |
 | `python-quick-reference.md` | Complete one-stop syntax cheat sheet and collections summary. |
+| `no-laptop-setups.md` | Free alternative setups for learners without a laptop (browser, Android, and offline options). |
+| `phone-only-quickstart.md` | Short Android-only path using Pydroid 3, with optional Termux. |
+| `no-laptop-handout.md` | Low-ink, print-friendly one-page handout of the two main routes. |
 
 ---
 
@@ -34,3 +37,5 @@ By the end of this orientation, you will:
 3. Follow **`setting-up-python.md`** to install Python 3.8+ on your machine.
 4. Follow **`using-vscode.md`** to prepare your editor environment.
 5. Once your terminal confirms `python3 --version`, proceed directly to **`../01-getting-started/`**!
+
+> 💡 **No laptop?** Follow [`no-laptop-setups.md`](./no-laptop-setups.md) instead. It explains how to complete the entire curriculum for free using a browser (Replit, Colab, Codespaces) or an Android phone (Pydroid 3, Termux).

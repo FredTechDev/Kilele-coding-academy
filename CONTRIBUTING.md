@@ -38,6 +38,18 @@ When contributing lesson content, exercises, or code samples, keep in mind our c
 
 ---
 
+## 📱 Accessibility & Device Compatibility
+
+Some learners complete this curriculum without a laptop, using a browser or an Android phone (see [`00-orientation/no-laptop-setups.md`](./00-orientation/no-laptop-setups.md)). When adding code or exercises:
+
+- **Stay in the standard library** (already required above) so no extra installation is needed.
+- **Use relative filenames** such as `students.txt`, never machine-specific absolute paths or OS-only commands.
+- **Prefer self-contained scripts** where practical. If an exercise needs several files or a custom import, say so in the README so phone/browser learners can pick a compatible tool.
+- **Keep `input()` simple** — one question at a time with a clear prompt works best in browser consoles and phone apps.
+- **Mention the no-laptop route** in new module READMEs when an exercise depends on files, folders, or the terminal.
+
+---
+
 ## 📝 Documentation Standards
 
 Every module and project directory requires a `README.md`. Individual lessons and project READMEs should include:

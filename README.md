@@ -71,6 +71,7 @@ kilele-python-learning-pack/
 ### 1. Requirements
 - Python 3.8 or higher installed on your system.
 - Visual Studio Code (or any text editor of your choice).
+- **No laptop?** See the [free alternative setups](./00-orientation/no-laptop-setups.md) — the whole curriculum can be completed in a browser (Replit, Colab, Codespaces) or on an Android phone (Pydroid 3, Termux).
 
 ### 2. Getting the Repository
 Clone or download this repository to your computer:
